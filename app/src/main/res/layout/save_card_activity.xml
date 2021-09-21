@@ -1,0 +1,685 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.business.card.scanner.maker.model.Business_Card" />
+
+
+        <variable
+            name="ClickToGetImage"
+            type="com.business.card.scanner.maker.activity.Create_Activity" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolBar"
+            style="@style/toolBar"
+
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/toolbar"
+            app:contentInsetStart="0dp" />
+
+        <ScrollView
+            android:id="@+id/nestScroll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/toolBar"
+            android:layout_above="@+id/llsave"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/toolBar"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:id="@+id/imageviewlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="210dp"
+                    android:orientation="vertical">
+
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="8dp"
+                            android:layout_marginTop="60dp"
+                            android:layout_marginRight="8dp"
+                            android:visibility="gone">
+
+                            <LinearLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_alignParentBottom="true"
+                                android:layout_marginBottom="8dp"
+                                android:gravity="bottom"
+                                android:orientation="horizontal"
+                                android:background="@drawable/rounded_shape"
+                                android:elevation="@dimen/_5sdp"
+
+                                android:weightSum="4">
+
+                                <ImageView
+                                    android:id="@+id/ivCall"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:padding="8dp"
+                                    android:src="@drawable/phonecall"
+                                    app:tint="@color/fontcolor_gray" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/divider" />
+
+                                <ImageView
+                                    android:id="@+id/ivSMS"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:padding="8dp"
+                                    android:src="@drawable/comment"
+                                    app:tint="@color/fontcolor_gray" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/divider" />
+
+                                <ImageView
+                                    android:id="@+id/ivEmail"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:padding="8dp"
+                                    android:src="@drawable/envelope"
+                                    app:tint="@color/fontcolor_gray" />
+
+                                <View
+                                    android:layout_width="1dp"
+                                    android:layout_height="match_parent"
+                                    android:background="@color/divider" />
+
+                                <ImageView
+                                    android:id="@+id/ivMap"
+                                    android:layout_width="40dp"
+                                    android:layout_height="40dp"
+                                    android:layout_weight="1"
+                                    android:background="?attr/selectableItemBackground"
+                                    android:padding="8dp"
+                                    android:src="@drawable/adress"
+                                    app:tint="@color/fontcolor_gray" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:id="@+id/llGalleryImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            android:background="@drawable/rounded_shape"
+                            android:gravity="center">
+
+                            <ImageView
+                                android:id="@+id/cardImage"
+                                android:layout_width="100dp"
+                                android:layout_height="80dp"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:onClick="onClick"
+                                android:src="@drawable/ic_add_img"
+                                app:tint="@color/white" />
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/cardImage"
+                                android:layout_centerHorizontal="true"
+                                android:layout_centerVertical="true"
+                                android:layout_margin="5dp"
+                                android:textColor="@color/toolbar"
+                                android:text="Tap to Add Image" />
+                        </RelativeLayout>
+
+                        <androidx.cardview.widget.CardView
+                            android:id="@+id/rlScanImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="200dp"
+                            android:layout_marginLeft="20dp"
+                            android:layout_marginTop="10dp"
+                            android:layout_marginRight="20dp"
+                            app:cardBackgroundColor="@color/card_inner_color"
+                            app:cardCornerRadius="@dimen/_6sdp"
+                            android:gravity="center"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent">
+
+                                <ImageView
+                                    android:id="@+id/image"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent"
+                                    android:scaleType="fitXY"
+                                    android:adjustViewBounds="true"/>
+
+                            </RelativeLayout>
+
+                            <ImageView
+                                android:id="@+id/retack"
+                                android:layout_width="40dp"
+                                android:layout_height="40dp"
+                                android:layout_gravity="bottom|right|center_vertical|center_horizontal|center"
+                                android:layout_margin="5dp"
+                                android:background="?attr/selectableItemBackground"
+                                android:padding="8dp"
+                                android:src="@drawable/rescan"
+                                app:tint="@color/toolbar" />
+                        </androidx.cardview.widget.CardView>
+
+                    </FrameLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/detaillay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Full Name"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etName"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_toStartOf="@+id/ivName"
+                            android:background="@null"
+                            android:focusable="true"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.name}"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/ivName"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/down"
+                            app:tint="@color/toolbar" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Company"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etCompany"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_toStartOf="@+id/ivCompany"
+                            android:background="@null"
+                            android:focusable="true"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.company}"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/ivCompany"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/down"
+                            app:tint="@color/toolbar" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Job Title"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etJobTitle"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_toStartOf="@+id/ivJobTitle"
+                            android:background="@null"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.job_title}"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/ivJobTitle"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/down"
+                            app:tint="@color/toolbar"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Address"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_toStartOf="@+id/ivAddress"
+                            android:background="@null"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.address}"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/ivAddress"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/down"
+                            app:tint="@color/toolbar"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Phone"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etPhone"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:layout_toStartOf="@+id/ivphone"
+                            android:background="@null"
+                            android:focusable="true"
+                            android:text="@{viewModel.phone}"
+                            android:inputType="phone"
+                            android:textColor="@color/text_color" />
+
+                        <ImageView
+                            android:id="@+id/ivphone"
+                            android:layout_width="15dp"
+                            android:layout_height="15dp"
+                            android:layout_alignParentEnd="true"
+                            android:layout_centerVertical="true"
+                            android:layout_marginRight="10dp"
+                            android:background="?attr/selectableItemBackground"
+                            android:src="@drawable/down"
+                            app:tint="@color/toolbar"/>
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Website"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etWebsite"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@null"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.website}"
+                            android:textColor="@color/text_color" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Email"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etEmailAddress"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@null"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.email}"
+                            android:textColor="@color/text_color" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="3dp"
+                        android:fontFamily="@font/overpass_bold"
+                        android:text="Note"
+                        android:textColor="@color/fontcolor_gray"
+                        android:textStyle="bold" />
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <EditText
+                            android:id="@+id/etNote"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="10dp"
+                            android:layout_marginTop="2dp"
+                            android:background="@null"
+                            android:inputType="textCapWords"
+                            android:text="@{viewModel.note}"
+                            android:textColor="@color/text_color" />
+                    </RelativeLayout>
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:id="@+id/grouplay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:layout_marginTop="15dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/rounded_shape"
+                        android:elevation="@dimen/_5sdp"
+                        android:layout_margin="@dimen/_2sdp">
+
+                        <RelativeLayout
+                            android:id="@+id/rel1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp">
+
+                            <TextView
+                                android:id="@+id/etgroup"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_centerVertical="true"
+                                android:fontFamily="@font/overpass_bold"
+                                android:text="Select Group"
+                                android:textStyle="bold" />
+
+                            <LinearLayout
+                                android:id="@+id/openGroupdialog"
+                                android:layout_width="30dp"
+                                android:layout_height="30dp"
+                                android:layout_alignParentEnd="true"
+                                android:background="@drawable/round_bkg"
+                                android:foreground="?attr/selectableItemBackground"
+                                android:gravity="center"
+                                android:onClick="onClick">
+
+                                <ImageView
+                                    android:id="@+id/ivgroup"
+                                    android:layout_width="15dp"
+                                    android:layout_height="15dp"
+                                    android:layout_alignParentEnd="true"
+                                    android:src="@drawable/add" />
+                            </LinearLayout>
+                        </RelativeLayout>
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/rel1">
+
+                            <LinearLayout
+                                android:id="@+id/hide"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:focusable="true"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/addtoGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="80dp"
+                                    android:layout_marginRight="80dp"
+                                    android:background="@drawable/rounded_shape"
+                                    android:gravity="center"
+                                    android:paddingTop="15dp"
+                                    android:paddingBottom="15dp"
+                                    android:text="ADD NEW GROUP"
+                                    android:textColor="@color/white"
+                                    android:textStyle="bold"
+                                    android:backgroundTint="@color/toolbar"/>
+
+                                <androidx.recyclerview.widget.RecyclerView
+                                    android:id="@+id/rvRGroup"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:clipToPadding="false"
+                                    android:overScrollMode="never"
+                                    android:paddingBottom="8dp" />
+                            </LinearLayout>
+                        </RelativeLayout>
+                    </RelativeLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </ScrollView>
+
+        <LinearLayout
+            android:id="@+id/llsave"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_marginTop="15dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tvDone"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:text="Done"
+                android:textSize="@dimen/_15sdp"
+                android:gravity="center"
+                android:onClick="onClick"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/toolbar"
+                android:fontFamily="@font/overpass_bold"
+                android:background="@drawable/rounded_shape_white"
+                android:elevation="@dimen/_5sdp"
+                android:layout_margin="@dimen/_2sdp">
+
+            </TextView>
+        </LinearLayout>
+    </RelativeLayout>
+</layout>
+

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="purple_200">#A02352</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#70012B</color>
+    <color name="teal_200">#70012B</color>
+    <color name="teal_700">#70012B</color>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFF</color>
+
+
+    <color name="divider">#969DA7</color>
+    <color name="error_color_material_dark">#ff7043</color>
+    <color name="error_color_material_light">#ff5722</color>
+
+    <color name="fontcolor_main">#6a72e7</color>
+    <color name="fontcolor_primary">#342f57</color>
+    <color name="foreground_material_dark">@android:color/white</color>
+    <color name="foreground_material_light">@android:color/black</color>
+    <color name="gnt_ad_green">#3a6728</color>
+    <color name="gnt_black">#000000</color>
+    <color name="gnt_blue">#4285f4</color>
+    <color name="gnt_gray">#808080</color>
+    <color name="gnt_green">#00ff00</color>
+    <color name="gnt_outline">#e0e0e0</color>
+    <color name="gnt_red">#ff0000</color>
+    <color name="gnt_test_background_color">#00f4f4f4</color>
+    <color name="gnt_test_background_color_2">#00a3a3a3</color>
+    <color name="gnt_white">#ffffff</color>
+    <color name="grey_200">#eeeeee</color>
+    <color name="grey_400">#bdbdbd</color>
+    <color name="grey_500">#9e9e9e</color>
+
+
+    <color name="rate_active_color">#fffeba39</color>
+    <color name="rate_button_color">#006cbc</color>
+    <color name="rate_normal_color">#ffa5a5a5</color>
+    <color name="ratingBarBackgroundColor">#d1d1d1</color>
+    <color name="ratingBarColor">#f9d71c</color>
+    <color name="toolbar">#70012B</color>
+    <color name="text_color">#455053</color>
+    <color name="background">#EAE8E9</color>
+    <color name="fontcolor_gray">#70012B</color>
+    <!--<color name="background">#0B376D</color>-->
+    <color name="blue">#0B376D</color>
+    <color name="card_inner_color">#7CBCBABA</color>
+    <color name="card_bg">#E8C6BE</color>
+    <color name="tooltip_background_dark">#e6616161</color>
+    <color name="tooltip_background_light">#e6ffffff</color>
+    <color name="translittle">#60676767</color>
+    <color name="translittle2">#90676767</color>
+    <color name="transparent">#2e3348</color>
+    <color name="viewfinder_border">#ffafed44</color>
+    <color name="viewfinder_laser">#ffcc0000</color>
+    <color name="viewfinder_mask">#60000000</color>
+    <color name="website">#e3dfff</color>
+
+</resources>

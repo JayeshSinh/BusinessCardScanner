@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/search"
+        android:icon="@drawable/ic_search"
+        android:title="Search"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"
+        app:showAsAction="never|always|collapseActionView" />
+    <item
+        android:id="@+id/menu"
+        android:icon="@drawable/ic_sort"
+        android:title="More Option"
+        app:showAsAction="always">
+        <menu>
+            <item
+                android:id="@+id/date"
+                android:title="Date" />
+            <item
+                android:id="@+id/name"
+                android:title="Name" />
+            <item
+                android:id="@+id/company"
+                android:title="Company" />
+        </menu>
+    </item>
+</menu>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+        <variable
+            name="Groupname"
+            type="com.business.card.scanner.maker.model.Group_tab" />
+    </data>
+    <LinearLayout
+        xmlns:aapt="http://schemas.android.com/aapt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:background="@drawable/bkg_edit"
+        android:foreground="?attr/selectableItemBackground"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:tag="layout/custom_radio_row_0">
+
+        <RadioButton
+            android:id="@+id/groupName"
+            android:layout_width="18dp"
+
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:button="@null"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/txtGrpName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:fontFamily="@font/firasans_medium"
+            android:tag="binding_1"
+            android:textColor="@color/toolbar"
+            android:textStyle="bold" />
+    </LinearLayout>
+</layout>
+

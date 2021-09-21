@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout
+        xmlns:aapt="http://schemas.android.com/aapt"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:orientation="vertical"
+        android:tag="layout/dialog_share_0">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="8dp"
+            app:cardBackgroundColor="#BAB8B9"
+            app:cardCornerRadius="8dp"
+            app:cardElevation="0dp"
+            app:cardUseCompatPadding="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="5dp"
+                    android:orientation="vertical"
+                    android:weightSum="3">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ll_share_card"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/toolbar"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Share Card"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ll_share_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:id="@+id/share_text"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/toolbar"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Share Text"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/ll_share_card_with_text"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:foreground="?attr/selectableItemBackground"
+                        android:padding="10dp"
+                        app:cardCornerRadius="5dp"
+                        app:cardElevation="0dp"
+                        app:cardPreventCornerOverlap="false">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/toolbar"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="Share card with Text"
+                            android:textAllCaps="true"
+                            android:textColor="@color/white"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/llCancel"
+                    android:layout_width="100dp"
+                    android:layout_height="40dp"
+                    android:clipChildren="false"
+                    android:clipToPadding="false"
+                    android:divider="@android:color/transparent"
+                    android:dividerHeight="0px"
+                    android:elevation="0dp"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/_6sdp"
+                    android:foreground="?attr/selectableItemBackground"
+                    app:cardBackgroundColor="@color/toolbar"
+                    app:cardCornerRadius="20dp">
+
+                    <TextView
+                        android:id="@+id/txtCancel"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:fontFamily="@font/firasans_medium"
+                        android:text="close"
+                        android:textAllCaps="true"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+</layout>
+

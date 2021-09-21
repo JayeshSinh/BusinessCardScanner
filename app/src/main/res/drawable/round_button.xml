@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:aapt="http://schemas.android.com/aapt" android:color="@color/black">
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#05cccccc"/>
+            <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#10cccccc"/>
+            <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#20cccccc"/>
+            <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#25cccccc"/>
+            <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <solid android:color="#30cccccc"/>
+            <padding android:left="1dp" android:top="1dp" android:right="1dp" android:bottom="1dp"/>
+        </shape>
+    </item>
+    <item>
+        <shape android:shape="oval">
+            <gradient android:startColor="#3646d0" android:endColor="#4e6ade" android:angle="90"/>
+        </shape>
+    </item>
+</ripple>

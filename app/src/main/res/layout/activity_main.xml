@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="Toolbarclick"
+            type="com.business.card.scanner.maker.activity.MainActivity" />
+
+
+        <variable
+            name="RecyclerviewClick"
+            type="com.business.card.scanner.maker.adapter.Cards_adapter" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background"
+        android:measureAllChildren="true"
+        android:tag="layout/activity_main_0">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appbar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/toolbar">
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:theme="@style/toolBar">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_centerVertical="true"
+                            android:layout_gravity="center"
+                            android:fontFamily="@font/firasans_semibold"
+                            android:text="Business Card Scanner"
+                            android:textColor="@color/white"
+                            android:textSize="20dp" />
+                    </RelativeLayout>
+                </androidx.appcompat.widget.Toolbar>
+            </com.google.android.material.appbar.AppBarLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/bottomfram"
+                android:layout_below="@+id/appbar">
+
+                <!--<androidx.cardview.widget.CardView
+                    android:id="@+id/adLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="13dp"
+                    android:layout_marginTop="@dimen/_10sdp"
+                    android:layout_marginRight="13dp"
+                    android:layout_marginBottom="@dimen/_10sdp"
+                    android:tag="binding_1"
+                    app:cardCornerRadius="@dimen/_5sdp">
+
+
+                </androidx.cardview.widget.CardView>-->
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvCards"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/adLayout"
+                    android:clipToPadding="false" />
+            </RelativeLayout>
+
+            <FrameLayout
+                android:id="@+id/No_Data"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/ic_noData"
+                        android:layout_width="150dp"
+                        android:layout_height="150dp"
+                        android:layout_gravity="center_horizontal" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_horizontal"
+                        android:fontFamily="@font/firasans_regular"
+                        android:gravity="center_horizontal"
+                        android:padding="7dp"
+                        android:text="@string/no_data"
+                        android:textColor="@color/toolbar"
+                        android:textSize="16dp" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <FrameLayout
+                android:id="@+id/bottomfram"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true">
+
+                <LinearLayout
+                    android:id="@+id/bottomlay"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/_55sdp"
+                    android:layout_gravity="bottom"
+                    android:background="@drawable/bkg_menu"
+                    android:gravity="bottom"
+                    android:orientation="horizontal"
+                    android:weightSum="5">
+
+                    <LinearLayout
+                        android:id="@+id/card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="@{Toolbarclick}"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:tag="binding_2"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_home"
+                            app:tint="@color/toolbar"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/firasans_medium"
+                            android:gravity="center"
+                            android:text="Home"
+                            android:textColor="@color/toolbar"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/ll_Favourite"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="@{Toolbarclick}"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:tag="binding_3"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_favourite"
+                            app:tint="@color/toolbar"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/firasans_medium"
+                            android:gravity="center"
+                            android:text="Favourite"
+                            android:textColor="@color/toolbar"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/b_card"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="@{Toolbarclick}"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:tag="binding_4"
+                        android:weightSum="2">
+
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="@dimen/_20sdp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/main_b_card"
+                            app:tint="@color/toolbar" />
+
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/firasans_medium"
+                            android:gravity="center"
+                            android:text="Scan Card"
+                            android:textColor="@color/toolbar"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/create"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="@{Toolbarclick}"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:tag="binding_4"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/create"
+                            app:tint="@color/toolbar"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/firasans_medium"
+                            android:gravity="center"
+                            android:text="Create"
+                            android:textColor="@color/toolbar"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/mine"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="?attr/selectableItemBackground"
+                        android:onClick="@{Toolbarclick}"
+                        android:orientation="vertical"
+                        android:paddingTop="@dimen/_8sdp"
+                        android:tag="binding_5"
+                        android:weightSum="2">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/mine"
+                            app:tint="@color/toolbar"/>
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:fontFamily="@font/firasans_medium"
+                            android:gravity="center"
+                            android:text="Setting"
+                            android:textColor="@color/toolbar"
+                            android:textSize="12dp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+
+
+        </RelativeLayout>
+    </FrameLayout>
+
+</layout>
+
